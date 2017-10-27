@@ -1,10 +1,10 @@
-import java.util.Scanner;
+import java.util.Scanner; //import scanner for user input
 
 class MagicWorld {
 
-    private static int var;
-    private static Scanner input = new Scanner(System.in);
-    private static NumberOracle oracle = new NumberOracle();
+    private static int num; //our test number
+    private static Scanner input = new Scanner(System.in); //scans input
+    private static NumberOracle oracle = new NumberOracle(); //our oracle
 
     public static void main(String[] args) {
 
@@ -12,18 +12,23 @@ class MagicWorld {
         do {
             //prompting user for a number
             System.out.print("Please enter your number: ");
-            //check if input is an integer
+
+            //loop until input is an integer
             while (!input.hasNextInt()) {
+
                 System.out.print("your number should be integer(<1 to quit): ");
                 input.next();
             }
+
             //getting use input
-            var = input.nextInt();
-            if (var < 1)
-                break;
-            oracle.setNum(var);    
-            oracle.checkInt();
-        } while (var > 0); //infinit loop until gets a positive number
-        System.out.println("\n\nThe Oracle is closing for business now");
+            num = input.nextInt();
+
+            //
+            if (num < 1) {
+
+                System.out.println("\n\nThe Oracle is closing for business now");
+            }
+            oracle.consult(num);
+        } while (num > 0); //infinit loop until gets a number less than 1
     }
 }
