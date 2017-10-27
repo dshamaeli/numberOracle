@@ -20,15 +20,12 @@ class MagicWorld {
                 input.next();
             }
 
-            //getting use input
+            //getting user input
             num = input.nextInt();
 
-            //
-            if (num < 1) {
-
-                System.out.println("\n\nThe Oracle is closing for business now");
-            }
+            //consult oracle
             oracle.consult(num);
+
         } while (num > 0); //infinit loop until gets a number less than 1
     }
 }
